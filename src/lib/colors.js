@@ -26,7 +26,8 @@ let Colors = {
   ccc: '#ccc',
   eee: '#eee',
 
-  mainRed: '#e73820'
+  mainRed: '#e73820',
+  mainBlue: '#1f79d5'
 }
 
 export default Colors

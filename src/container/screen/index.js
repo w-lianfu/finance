@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { TabNavigator } from 'react-navigation'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import Home from '../component/home'
 import Chosen from '../component/chosen'
@@ -11,16 +12,40 @@ import Colors from '../../lib/colors'
 const Screen = TabNavigator(
   {
     Home: {
-      screen: Home
+      screen: Home,
+      navigationOptions: {
+        tabBarLabel: '首页',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='home' size={23} color={tintColor} />
+        )
+      }
     },
     Chosen: {
-      screen: Chosen
+      screen: Chosen,
+      navigationOptions: {
+        tabBarLabel: '精选',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='grade' size={23} color={tintColor} />
+        )
+      }
     },
     Service: {
-      screen: Service
+      screen: Service,
+      navigationOptions: {
+        tabBarLabel: '服务',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='widgets' size={23} color={tintColor} />
+        )
+      }
     },
     Me: {
-      screen: Me
+      screen: Me,
+      navigationOptions: {
+        tabBarLabel: '我',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='person' size={23} color={tintColor} />
+        )
+      }
     }
   },
   {
@@ -31,9 +56,6 @@ const Screen = TabNavigator(
         fontSize: 13,
         paddingBottom: 3 
       },
-      iconStyle: {
-        color: Colors.red
-      },
       tabStyle: {
         backgroundColor: Colors.fff
       },
@@ -42,13 +64,8 @@ const Screen = TabNavigator(
         shadowColor: Colors.eee,
         shadowOpacity: 0.8
       },
-      activeTintColor: Colors.mainRed,
+      activeTintColor: Colors.c333,
       inactiveTintColor: Colors.c999
-    },
-    TabBarBottom: {
-      labelStyle: {
-        color: Colors.red
-      }
     }
   }
 )
