@@ -61,11 +61,14 @@ const Screen = TabNavigator(
       },
       style: {
         borderTopWidth: 0,
+        backgroundColor: Colors.white,
         shadowColor: Colors.eee,
         shadowOpacity: 0.8
       },
       activeTintColor: Colors.c333,
-      inactiveTintColor: Colors.c999
+      activeBackgroundColor: Colors.white,
+      inactiveTintColor: Colors.c999,
+      inactiveBackgroundColor: Colors.white
     }
   }
 )
