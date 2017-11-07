@@ -1,11 +1,13 @@
 import { observable, useStrict, action } from 'mobx'
 
+useStrict(true)
+
 class FinancialStore {
-  @observable num = 100
+  @observable iconName = 'eye'
 
   @action.bound
-  changeNum = (num) => {
-    this.num = parseFloat(Math.random().toFixed(2)) * 100
+  toggleEye = () => {
+    this.iconName = this.iconName === 'eye' ? 'eye-with-line' : 'eye'
   }
 }
 

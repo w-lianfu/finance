@@ -38,10 +38,10 @@ const Home = TabNavigator(
         fontSize: 19,
         marginBottom: 5,
         fontWeight: '500'
-      }
-    },
-    activeTintColor: Colors.mainBlue,
-    inactiveTineColor: Colors.c999
+      },
+      activeTintColor: Colors.mainBlue,
+      inactiveTintColor: Colors.black
+    }
   }
 )
 

@@ -3,6 +3,7 @@ let Colors = {
   green: '#0f0',
   blue: '#00f',
   white: '#fff',
+  black: 'black',
   orange: 'orange',
   orangered: 'orangered',
   purple: 'purple',
