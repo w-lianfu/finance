@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableHighlight } from 'react-native'
+import { navigate } from 'react-navigation'
 import { observer } from 'mobx-react'
 import Icon from 'react-native-vector-icons/Entypo'
+import { Button } from 'react-native-elements'
+
+import Treasure from '../treasure'
 
 import FinancialStore from './store'
 import {
@@ -20,6 +24,10 @@ class Financial extends Component {
     super(props)
   }
 
+  _onPress = () => {
+    this.props.navigation.navigate('Treasure')
+  }
+
   render() {
     return (
       <ScrollView>
@@ -31,9 +39,9 @@ class Financial extends Component {
                   <Icon name={store.iconName} size={17} color={Colors.white} style={Style.iconStyle} />
                 </TouchableHighlight>
               </CardBodyHeader>
-              <TextWhite size={17}>总资产</TextWhite>
+              <TextWhite size={16}>总资产</TextWhite>
               <TextWhite size={32} weight={500}>257.83</TextWhite>
-              <TextWhite size={19}>今日最新收益 +0.02</TextWhite>
+              <TextWhite size={17}>今日最新收益 +0.02</TextWhite>
             </CardBody>
             <CardFooter>
               <CardTab>
@@ -47,6 +55,7 @@ class Financial extends Component {
               </CardTab>
             </CardFooter>
           </HomeCard>
+          <Button raised icon={{name: 'code'}} title='go Chosen' onPress={this._onPress} />
         </View>
         
       </ScrollView>
