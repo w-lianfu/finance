@@ -1,66 +1,32 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableHighlight } from 'react-native'
-import { navigate } from 'react-navigation'
-import { observer } from 'mobx-react'
+import { StackNavigator, navigate } from 'react-navigation'
 import Icon from 'react-native-vector-icons/Entypo'
 import { Button } from 'react-native-elements'
 
 import Treasure from '../treasure'
+import Financial from './financial'
+import Other from '../other'
 
 import FinancialStore from './store'
-import {
-  HomeCard, TextFont, TextWhite, CardBody, CardBodyHeader,
-  WhiteHeader, CardFooter, CardTab
-} from './styled'
 import Colors from '../../../lib/colors'
 import Style from './style'
 import PublicStyle from '../../../lib/public'
 
-let store = new FinancialStore()
-
-@observer
-class Financial extends Component {
-  constructor(props) {
-    super(props)
+let FinancialStack = StackNavigator({
+  Financial: {
+    screen: Financial,
+    navigationOptions: {
+      title: '金融'
+    }
+  },
+  Other: {
+    screen: Other,
+    path: '/other',
+    navigationOptions: {
+      title: '其它'
+    }
   }
+})
 
-  _onPress = () => {
-    this.props.navigation.navigate('Treasure')
-  }
-
-  render() {
-    return (
-      <ScrollView>
-        <View style={Style.CarouselBox}>
-          <HomeCard bgColor={Colors.mainBlue}>
-            <CardBody>
-              <CardBodyHeader>
-                <TouchableHighlight onPress={store.toggleEye} underlayColor={Colors.mainBlue} style={{marginTop:0,marginBottom:0,paddingTop:0,paddingBottom:0}}>
-                  <Icon name={store.iconName} size={17} color={Colors.white} style={Style.iconStyle} />
-                </TouchableHighlight>
-              </CardBodyHeader>
-              <TextWhite size={16}>总资产</TextWhite>
-              <TextWhite size={32} weight={500}>257.83</TextWhite>
-              <TextWhite size={17}>今日最新收益 +0.02</TextWhite>
-            </CardBody>
-            <CardFooter>
-              <CardTab>
-                <TextWhite>立即测评</TextWhite>
-              </CardTab>
-              <CardTab>
-                <TextWhite>开启加速</TextWhite>
-              </CardTab>
-              <CardTab>
-                <TextWhite>免费领取</TextWhite>
-              </CardTab>
-            </CardFooter>
-          </HomeCard>
-          <Button raised icon={{name: 'code'}} title='go Chosen' onPress={this._onPress} />
-        </View>
-        
-      </ScrollView>
-    )
-  }
-}
-
-export default Financial
+export default FinancialStack

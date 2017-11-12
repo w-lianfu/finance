@@ -3,26 +3,25 @@ import { View, Text } from 'react-native'
 import { Button } from 'react-native-elements'
 import { navigate } from 'react-navigation'
 
-class Financial extends Component {
+class Other extends Component {
   constructor(props) {
     super(props)
   }
 
   _onPress = () => {
-    this.props.navigation.navigate('Other')
+    this.props.navigation.navigate('Financial')
   }
 
   render() {
     return (
       <View>
-        <Text>Financial</Text>
-        <Text>Financial</Text>
-        <Text>Financial</Text>
-        <Text>hello</Text>
-        <Button title='其它' onPress={this._onPress} />
+        <Text>Other</Text>
+        <Text>Other</Text>
+        <Text>Other</Text>
+        <Button title='金融' onPress={this._onPress} />
       </View>
     )
   }
 }
 
-export default Financial
+export default Other

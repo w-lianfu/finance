@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { TabNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 import Home from '../component/home'
 import Chosen from '../component/chosen'
@@ -15,8 +15,8 @@ const Screen = TabNavigator(
       screen: Home,
       navigationOptions: {
         tabBarLabel: '首页',
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name='home' size={23} color={tintColor} />
+        tabBarIcon: ({ tintColor, focused }) => (
+          <Ionicons name={focused ? 'ios-home' : 'ios-star-outline'} size={25} color={tintColor} />
         )
       }
     },
@@ -24,8 +24,8 @@ const Screen = TabNavigator(
       screen: Chosen,
       navigationOptions: {
         tabBarLabel: '精选',
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name='grade' size={23} color={tintColor} />
+        tabBarIcon: ({ tintColor, focused }) => (
+          <Ionicons name={focused ? 'ios-star' : 'ios-star-outline'} size={25} color={tintColor} />
         )
       }
     },
@@ -33,8 +33,8 @@ const Screen = TabNavigator(
       screen: Service,
       navigationOptions: {
         tabBarLabel: '服务',
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name='widgets' size={23} color={tintColor} />
+        tabBarIcon: ({ tintColor, focused }) => (
+          <Ionicons name={focused ? 'ios-ribbon' : 'ios-ribbon-outline'} size={25} color={tintColor} />
         )
       }
     },
@@ -42,8 +42,8 @@ const Screen = TabNavigator(
       screen: Me,
       navigationOptions: {
         tabBarLabel: '我',
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name='person' size={23} color={tintColor} />
+        tabBarIcon: ({ tintColor, focused }) => (
+          <Ionicons name={focused ? 'ios-person' : 'ios-person-outline'} size={25} color={tintColor} />
         )
       }
     }
