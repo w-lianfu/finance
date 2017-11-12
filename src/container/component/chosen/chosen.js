@@ -3,8 +3,6 @@ import { View, Text } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Button } from 'react-native-elements'
 
-import Sign from './sign'
-
 class Chosen extends Component {
   constructor(props) {
     super(props)

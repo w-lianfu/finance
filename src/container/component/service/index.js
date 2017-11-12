@@ -1,24 +1,15 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import { StackNavigator } from 'react-navigation'
 
-class Service extends Component {
-  render() {
-    return (
-      <View>
-        <Text>Service Page...</Text>
-        <Text>Service Page...</Text>
-        <Text>Service Page...</Text>
-        <Text>Service Page...</Text>
-        <Text>Service Page...</Text>
-        <Text>Service Page...</Text>
-        <Text>Service Page...</Text>
-        <Text>Service Page...</Text>
-        <Text>Service Page...</Text>
-        <Text>Service Page...</Text>
-      </View>
-    )
+import Service from './service'
+
+let ServiceStack = StackNavigator({
+  Service: {
+    screen: Service,
+    navigationOptions: {
+      title: '服务'
+    }
   }
-}
+})
 
-export default Service
+export default ServiceStack
