@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Button } from 'react-native-elements'
 
-import Treasure from '../treasure'
+import Sign from './sign'
 
 class Chosen extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Chosen extends Component {
   }
 
   _goTreasure = () => {
-    this.props.navigation.navigate('Treasure')
+    this.props.navigation.navigate('Sign')
   }
 
   render() {
@@ -22,7 +22,7 @@ class Chosen extends Component {
         <Text>Chosen Page...</Text>
         <Text>Chosen Page...</Text>
         <Text>Chosen Page...</Text>
-        <Button raised backgroundColor='cyan' title='京东小金库' onPress={this._goTreasure} />
+        <Button raised backgroundColor='cyan' title='签到领钢镚' onPress={this._goTreasure} />
       </View>
     )
   }

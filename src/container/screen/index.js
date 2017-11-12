@@ -16,7 +16,7 @@ const Screen = TabNavigator(
       navigationOptions: {
         tabBarLabel: '首页',
         tabBarIcon: ({ tintColor, focused }) => (
-          <Ionicons name={focused ? 'ios-home' : 'ios-star-outline'} size={25} color={tintColor} />
+          <Ionicons name={focused ? 'ios-home' : 'ios-home-outline'} size={25} color={tintColor} />
         )
       }
     },

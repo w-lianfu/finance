@@ -4,7 +4,7 @@ import { StackNavigator, navigate } from 'react-navigation'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import Chosen from './chosen'
-import Treasure from '../treasure'
+import Sign from './sign'
 
 let ChosenStack = StackNavigator({
   Chosen: {
@@ -13,11 +13,10 @@ let ChosenStack = StackNavigator({
       title: '精选'
     }
   },
-  Treasure: {
-    path: '/treasure',
-    screen: Treasure,
+  Sign: {
+    screen: Sign,
     navigationOptions: {
-      title: '京东小金库'
+      title: '签到'
     }
   }
 })

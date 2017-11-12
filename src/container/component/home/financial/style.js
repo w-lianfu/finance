@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import '../../../lib/colors'
+import '../../../../lib/colors'
 
 let Style = StyleSheet.create({
   CarouselBox: {

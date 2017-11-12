@@ -1,48 +1,23 @@
-import React, { Component } from 'react'
-import { View, Text } from 'react-native'
-import { TabNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import React from 'react'
+import { View, Text } from 'react-navigation'
+import { StackNavigator, navigate } from 'react-navigation'
 
-import Financial from '../financial'
-import Ious from '../ious'
-import Pay from '../pay'
+import Financial from './financial'
+import Other from '../other'
 
-import Colors from '../../../lib/colors'
-
-const Home = TabNavigator(
-  {
-    Financial: {
-      screen: Financial,
-      navigationOptions: {
-        tabBarLabel: '理财'
-      }
-    },
-    Ious: {
-      screen: Ious,
-      navigationOptions: {
-        tabBarLabel: '白条'
-      }
-    },
-    Pay: {
-      screen: Pay,
-      navigationOptions: {
-        tabBarLabel: '支付'
-      }
+let Home = StackNavigator({
+  Financial: {
+    screen: Financial,
+    navigationOptions: {
+      title: '金融'
     }
   },
-  {
-    tabBarPosition: 'top',
-    swipeEnabled: true,
-    tabBarOptions: {
-      labelStyle: {
-        fontSize: 19,
-        marginBottom: 5,
-        fontWeight: '500'
-      },
-      activeTintColor: Colors.mainBlue,
-      inactiveTintColor: Colors.black
+  Other: {
+    screen: Other,
+    navigationOptions: {
+      title: '其它'
     }
   }
-)
+})
 
 export default Home

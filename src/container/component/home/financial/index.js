@@ -5,16 +5,16 @@ import { observer } from 'mobx-react'
 import Icon from 'react-native-vector-icons/Entypo'
 import { Button } from 'react-native-elements'
 
-import Treasure from '../treasure'
-
 import FinancialStore from './store'
+import Other from '../../other'
+
 import {
   HomeCard, TextFont, TextWhite, CardBody, CardBodyHeader,
   WhiteHeader, CardFooter, CardTab
 } from './styled'
-import Colors from '../../../lib/colors'
 import Style from './style'
-import PublicStyle from '../../../lib/public'
+import Colors from '../../../../lib/colors'
+import PublicStyle from '../../../../lib/public'
 
 let store = new FinancialStore()
 
@@ -25,7 +25,7 @@ class Financial extends Component {
   }
 
   _onPress = () => {
-    this.props.navigation.navigate('Treasure')
+    this.props.navigation.navigate('Other')
   }
 
   render() {
@@ -55,7 +55,7 @@ class Financial extends Component {
               </CardTab>
             </CardFooter>
           </HomeCard>
-          <Button raised icon={{name: 'code'}} title='go Chosen' onPress={this._onPress} />
+          <Button raised icon={{name: 'code'}} title='其它' onPress={this._onPress} />
         </View>
         
       </ScrollView>
