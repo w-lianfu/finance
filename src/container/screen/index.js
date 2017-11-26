@@ -8,10 +8,7 @@ import Sign from '../component/chosen/sign'
 
 let ScreenStack = StackNavigator({
   Screen: {
-    screen: Screen,
-    navigationOptions: {
-      header: null
-    }
+    screen: Screen
   },
   Chosen: {
     screen: Chosen,
@@ -31,6 +28,8 @@ let ScreenStack = StackNavigator({
       title: '签到'
     }
   }
+}, {
+  headerMode: 'none'
 })
 
 export default ScreenStack
